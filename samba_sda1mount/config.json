@@ -1,7 +1,7 @@
 {
   "name": "Samba share",
-  "version": "9.0.1",
-  "slug": "samba",
+  "version": "9.0",
+  "slug": "samba_sda1mount",
   "description": "Expose Home Assistant folders with SMB/CIFS",
   "url": "https://github.com/valuyskiy/hassio-addons/tree/master/samba_sda1mount",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
@@ -25,7 +25,5 @@
     "allow_hosts": ["str"],
     "veto_files": ["str"]
   },
-  "image": "homeassistant/{arch}-addon-samba",
-  "devices": ["/dev/sda1:/dev/sda1:rwm"],
-  "full_access": true
+  "image": "homeassistant/{arch}-addon-samba"
 }

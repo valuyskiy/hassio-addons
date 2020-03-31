@@ -20,9 +20,7 @@ fi
 
 WAIT_PIDS=()
 
-if [[ -e /dev/sda1 ]]; then
-    mount /dev/sda1 /share/hdd
-fi
+mount /dev/sda1 /share/hdd
 
 
 # Check Login data

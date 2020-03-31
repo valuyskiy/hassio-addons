@@ -1,0 +1,19 @@
+{
+  "name": "SDA to Samba",
+  "version": "0.0.1",
+  "slug": "sda2samba",
+  "description": "Mount SDA disk to SAMBA share folder",
+  "url": "https://github.com/valuyskiy/hassio-addons/sda2samba",
+  "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
+  "startup": "services",
+  "boot": "auto",
+  "host_network": true,
+  "options": {
+	"log_level": "info"
+  },
+  "schema": {
+	"log_level": "list(trace|debug|info|notice|warning|error|fatal)"
+  },
+  "devices": ["/dev/sda1:/dev/sda1:rwm"],
+  "full_access": true
+}

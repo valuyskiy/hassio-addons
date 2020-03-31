@@ -1,9 +1,9 @@
 {
   "name": "Samba share",
-  "version": "0.8.2",
+  "version": "9.0.1",
   "slug": "samba",
-  "description": "Expose Hass.io folders with SMB/CIFS",
-  "url": "https://github.com/popsodav/hassio-addons-example/samba/",
+  "description": "Expose Home Assistant folders with SMB/CIFS",
+  "url": "https://github.com/valuyskiy/hassio-addons/tree/master/samba_sda1mount",
   "arch": ["armhf", "armv7", "aarch64", "amd64", "i386"],
   "startup": "services",
   "boot": "auto",
@@ -11,22 +11,21 @@
   "map": ["config:rw", "ssl:rw", "addons:rw", "share:rw", "backup:rw"],
   "options": {
     "workgroup": "WORKGROUP",
-    "username": "hassio",
+    "username": "homeassistant",
     "password": null,
     "interface": "",
-    "allow_hosts": [
-        "10.0.0.0/8",
-        "172.16.0.0/12",
-        "192.168.0.0/16"
-    ]
+    "allow_hosts": ["10.0.0.0/8", "172.16.0.0/12", "192.168.0.0/16"],
+    "veto_files": ["._*", ".DS_Store", "Thumbs.db", "icon?", ".Trashes"]
   },
   "schema": {
     "workgroup": "str",
     "username": "str",
     "password": "str",
     "interface": "str",
-    "allow_hosts": ["str"]
+    "allow_hosts": ["str"],
+    "veto_files": ["str"]
   },
+  "image": "homeassistant/{arch}-addon-samba",
   "devices": ["/dev/sda1:/dev/sda1:rwm"],
   "full_access": true
 }

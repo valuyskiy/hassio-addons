@@ -25,5 +25,8 @@
     "allow_hosts": ["str"],
     "veto_files": ["str"]
   },
-  "image": "homeassistant/{arch}-addon-samba"
+  "image": "homeassistant/{arch}-addon-samba",
+  "devices": ["/dev/sda1:/dev/sda1:rwm"],
+  "full_access": true
+
 }
